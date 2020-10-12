@@ -1,0 +1,7 @@
+{
+  "name": "bobcat-visualizer",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Ethan Printz",
+  "license": "MIT"
+}

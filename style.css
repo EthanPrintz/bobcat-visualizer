@@ -1,0 +1,75 @@
+:root {
+  --primary: #5d3d87;
+  --secondary: #765ca0;
+}
+
+html,
+body {
+  background-color: #f2f2f2;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  font-family: 'futura-pt-bold';
+  background-image: url('./img/skyline.svg');
+  background-size: contain;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+* {
+  box-sizing: border-box;
+}
+
+#landingContainer {
+  width: 100vmin;
+  height: 90vh;
+  position: absolute;
+  z-index: 2;
+  top: 5vh;
+  left: calc(50vw - 50vmin);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+#landingTitleContainer {
+  flex-basis: 100%;
+}
+#landingTitle {
+  color: var(--primary);
+  font-size: 4rem;
+}
+#landingSubtitle {
+  color: var(--secondary);
+  font-size: 2rem;
+}
+#landingSearchContainer {
+  flex-basis: 100%;
+}
+#landingSearchText {
+  color: #808080;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+#landingSearchBar {
+  color: #616161;
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+  background-color: #ffffff;
+  width: 70%;
+  margin-left: 15%;
+  border-radius: 1rem;
+  text-align: left;
+  outline: none;
+}
+[data-placeholder]:empty:before {
+  content: attr(data-placeholder);
+  color: #888;
+  font-style: italic;
+  color: #999999;
+  font-style: italic;
+  font-family: 'futura-pt';
+  font-weight: 600;
+}
