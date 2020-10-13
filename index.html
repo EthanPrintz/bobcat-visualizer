@@ -6,17 +6,46 @@
   <title>Bobcat Visualizer</title>
   <link rel="stylesheet" href="https://use.typekit.net/lhj4qmu.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js" integrity="sha512-C2RveGuPIWqkaLAluvoxyiaN1XYNe5ss11urhZWZYBUA9Ydgj+hfGKPcxCzTwut1/fmjEZR7Ac35f2aycT8Ogw==" crossorigin="anonymous"></script>
   <script defer src="script.js"></script>
 </head>
 <body>
   <div id="landingContainer">
     <div id="landingTitleContainer">
-      <div id="landingTitle">BOBCAT VISUALIZER</div>
-      <div id="landingSubtitle">FOR NYU COURSES</div>
+      <h1 id="landingTitle">BOBCAT VISUALIZER</h1>
+      <h2 id="landingSubtitle">FOR NYU COURSES</h2>
     </div>
     <div id="landingSearchContainer">
       <div id="landingSearchText">SELECT 2-5 DEPARTMENTS TO COMPARE</div>
       <div id="landingSearchBar" contenteditable="true" data-placeholder="SEARCH DEPARTMENTS"></div>
+      <div id="landingSearchResultsContainer"></div>
+    </div>
+    <div id="landingDepartmentContainer">
+      
+    </div>
+    <div id="landingContinueButton">CONTINUE</div>
+    </div>
+    <div id="dataContainer">
+      <div id="dataTitleContainer">
+        <h1 id="dataTitle">BOBCAT VISUALIZER</h1>
+        <h2 id="dataSubtitle">FOR NYU COURSES</h2>
+      </div>
+      <div id="dataWindowContainer">
+        <div class="dataWindow dataWindowOpen" id="startWindow">
+          <div class="dataWindowTitle">START TIME</div>
+          <div class="d3Wrapper" id="startTimeWrapper"></div>
+        </div>
+        <div class="dataWindow dataWindowClosed dwc-1" id="durationWindow">
+          <div class="dataWindowTitle">DURATION</div>
+        </div>
+        <div class="dataWindow dataWindowClosed dwc-2" id="typeWindow">
+          <div class="dataWindowTitle">TYPE</div>
+        </div>
+        <div class="dataWindow dataWindowClosed dwc-3" id="languageWindow">
+          <div class="dataWindowTitle">LANGUAGE</div>
+        </div>
+      </div>
+      <div id="departmentContainer"></div>
     </div>
   </div>
 </body>
