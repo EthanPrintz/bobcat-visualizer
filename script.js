@@ -78,6 +78,8 @@ function addDepartmentListeners() {
           code: this.querySelector('.resultCode').innerHTML,
           name: this.querySelector('.resultTitle').innerHTML,
         });
+        // Clear results
+        searchResultsContainer.innerHTML = '';
         // Clear search results
         document.getElementById('landingSearchResultsContainer').innerHTML = '';
         // Map selected subjects to dom elements and insert
@@ -477,6 +479,11 @@ function setupLanguageWindow(selectedSections) {
     'v',
     'vi',
     'vii',
+    '0',
+    '3',
+    '101',
+    'on',
+    'do',
   ];
 
   departmentStrings.forEach((department) => {
