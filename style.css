@@ -345,6 +345,21 @@ body {
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+  position: relative;
+}
+.axis {
+  color: grey;
+}
+#xAxis {
+  position: absolute;
+  bottom: 0.5vmin;
+  left: 50%;
+}
+#yAxis {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: rotate(-90deg);
 }
 
 #languageWrapper {

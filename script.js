@@ -448,6 +448,15 @@ function setupLanguageWindow(selectedSections) {
     'the',
     'lit',
     'cs',
+    'from',
+    'intro',
+    'i',
+    'ii',
+    'iii',
+    'iv',
+    'v',
+    'vi',
+    'vii',
   ];
 
   departmentStrings.forEach((department) => {
