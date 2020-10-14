@@ -141,6 +141,9 @@ async function changeScreen() {
   ).innerHTML = selectedSubjects
     .map((department) => `<div class="dataDepartment">${department.name}</div>`)
     .join('');
+  document.querySelectorAll('.dataDepartment').forEach((department) => {
+    department.addEventListener('click', removeDepartment);
+  });
   let selectedSections = await selectedToSelectedData();
   setupStartTimeWindow(selectedSections);
   setupTypeWindow(selectedSections);
@@ -149,6 +152,23 @@ async function changeScreen() {
   document
     .querySelectorAll('.dataWindow')
     .forEach((window) => window.addEventListener('click', changeWindow));
+}
+
+function removeDepartment() {
+  let departmentIndex = selectedSubjects.findIndex(
+    (dept) => dept.name == this.innerHTML
+  );
+  selectedSubjects.splice(departmentIndex, 1);
+  this.remove();
+  document.getElementById('reset').addEventListener('click', function () {
+    alert('hi');
+    location.reload();
+    return false;
+  });
+  setupStartTimeWindow(selectedSections);
+  setupTypeWindow(selectedSections);
+  setupDurationWindow(selectedSections);
+  setupLanguageWindow(selectedSections);
 }
 
 async function selectedToSelectedData() {
@@ -224,12 +244,12 @@ function setupTypeWindow(selectedSections) {
       }
     });
 
-    var width = 252;
-    var height = 252;
-    var radius = Math.min(width, height) / 2;
-    var donutWidth = 40; //This is the size of the hole in the middle
+    let width = 252;
+    let height = 252;
+    let radius = Math.min(width, height) / 2;
+    let donutWidth = 40; //This is the size of the hole in the middle
 
-    var color = d3
+    let color = d3
       .scaleOrdinal()
       .domain(finalTypes.map((type) => type.name))
       .range([
@@ -242,24 +262,24 @@ function setupTypeWindow(selectedSections) {
         chroma(colors[i]).darken(3).hex(),
       ]);
 
-    var svg = d3
+    let svg = d3
       .select('#typeWrapper')
       .append('svg')
       .attr('width', width)
       .attr('height', height)
       .append('g')
       .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
-    var arc = d3
+    let arc = d3
       .arc()
       .innerRadius(radius - donutWidth)
       .outerRadius(radius);
-    var pie = d3
+    let pie = d3
       .pie()
       .value(function (d) {
         return d.value;
       })
       .sort(null);
-    var path = svg
+    let path = svg
       .selectAll('path')
       .data(pie(finalTypes))
       .enter()
@@ -270,19 +290,19 @@ function setupTypeWindow(selectedSections) {
       })
       .attr('transform', 'translate(0, 0)');
 
-    var legendRectSize = 13;
-    var legendSpacing = 7;
-    var legend = svg
+    let legendRectSize = 13;
+    let legendSpacing = 7;
+    let legend = svg
       .selectAll('.legend') //the legend and placement
       .data(color.domain())
       .enter()
       .append('g')
       .attr('class', 'circle-legend')
       .attr('transform', function (d, i) {
-        var height = legendRectSize + legendSpacing;
-        var offset = (height * color.domain().length) / 2;
-        var horz = -2 * legendRectSize - 13;
-        var vert = i * height - offset;
+        let height = legendRectSize + legendSpacing;
+        let offset = (height * color.domain().length) / 2;
+        let horz = -2 * legendRectSize - 13;
+        let vert = i * height - offset;
         return 'translate(' + horz + ',' + vert + ')';
       });
     legend
@@ -327,7 +347,7 @@ function setupDurationWindow(selectedSections) {
 
   // Original sourced from https://www.d3-graph-gallery.com/graph/histogram_double.html
   // set the dimensions and margins of the graph
-  var margin = { top: 10, right: 30, bottom: 30, left: 40 },
+  let margin = { top: 10, right: 30, bottom: 30, left: 40 },
     width = 700 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -474,9 +494,9 @@ function setupLanguageWindow(selectedSections) {
 
 // From https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffleArray(array) {
-  for (var i = array.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = array[i];
     array[i] = array[j];
     array[j] = temp;
   }

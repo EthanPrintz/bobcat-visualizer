@@ -214,6 +214,19 @@ body {
   background-color: #e6e6e6;
   padding: 0 2vmin;
 }
+#reset {
+  position: absolute;
+  z-index: 6;
+  bottom: 2rem;
+  right: 2rem;
+  height: 3vmin;
+  width: 3vmin;
+  background-image: url('./img/reset.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  cursor: pointer;
+}
 .dataDepartment {
   font-style: italic;
   color: #f2f2f2;
