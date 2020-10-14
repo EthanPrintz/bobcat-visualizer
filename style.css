@@ -274,40 +274,111 @@ body {
   padding-top: 0.8rem;
   text-align: center;
 }
+.dataWindowOpen .d3Wrapper {
+  display: block;
+}
 .dataWindowClosed {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: calc(0.5vmin + 1vw);
-  margin-left: -3vmin;
-  padding-left: 2vmin;
   transition: 0.1s;
   cursor: pointer;
+  flex: 1;
 }
-.dwc-1 {
+.dataWindowClosed .d3Wrapper {
+  display: none !important;
+}
+.windowRight {
+  margin-left: -3vmin;
+  padding-left: 2vmin;
+}
+.windowLeft {
+  margin-right: -3vmin;
+}
+
+.one {
   background-color: #e6e6e6;
   color: #808080;
-  flex: 1;
   z-index: 9;
 }
-.dwc-1:hover {
+.one:hover {
   background-color: #dddddd;
 }
-.dwc-2 {
+
+.two {
   background-color: #cccccc;
   color: #666666;
-  flex: 1;
   z-index: 8;
 }
-.dwc-2:hover {
+.two:hover {
   background-color: #c2c2c2;
 }
-.dwc-3 {
+
+.three {
   background-color: #b3b3b3;
   color: #4d4d4d;
-  flex: 1;
   z-index: 7;
 }
-.dwc-3:hover {
+.three:hover {
   background-color: #acacac;
+}
+
+#startTimeWrapper {
+  width: 100%;
+  height: 70%;
+}
+
+#typeWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 90%;
+}
+#typeWrapper text {
+  font-family: 'futura-pt-condensed';
+  font-weight: bold;
+}
+#durationWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#languageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+#languageWrapper .label {
+  margin-left: 2rem;
+  color: rgb(105, 105, 105);
+}
+#usedWordsContainer {
+  max-width: 90vmin;
+  padding: 0.6rem 2rem;
+}
+#usedWordsContainer div {
+  white-space: normal;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+#usedWordsContainer div:nth-child(1) {
+  color: var(--yellow);
+}
+#usedWordsContainer div:nth-child(2) {
+  color: var(--orange);
+}
+#usedWordsContainer div:nth-child(3) {
+  color: var(--pink);
+}
+#usedWordsContainer div:nth-child(4) {
+  color: var(--purple);
+}
+#usedWordsContainer div:nth-child(5) {
+  color: var(--blue);
 }
