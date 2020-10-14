@@ -361,6 +361,8 @@ body {
 #usedWordsContainer {
   max-width: 90vmin;
   padding: 0.6rem 2rem;
+  max-height: calc((100vh - 9vmin - (5vmin + 5rem)) * 0.6);
+  overflow-y: scroll;
 }
 #usedWordsContainer div {
   white-space: normal;
